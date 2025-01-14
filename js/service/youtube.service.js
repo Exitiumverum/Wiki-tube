@@ -12,7 +12,7 @@ function getYt(SearchStr) {
          res.data.items.forEach(video => {
                 YT_TOP_RESULTS.push({
                 thumbnail: video.snippet.description,
-                url: `${YT_URL}${video.id.videoId}`,
+                id: video.id.videoId,
                 snippet: video.snippet.thumbnails.default
 
             })
