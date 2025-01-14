@@ -8,7 +8,10 @@ document.querySelector('.search-btn').addEventListener('click', () =>{
         renderWikiInfo(wikiInfo)
     })
 
-    getYt('suicide silence')
+    getYt('suicide silence').then(ytInfo => {
+        console.log(ytInfo)
+        renderYtTopResults(ytInfo)
+    })
 })
 
 function renderWikiInfo(wikiInfo){
@@ -30,6 +33,28 @@ function renderWikiInfo(wikiInfo){
     
 }
 
-function renderYtTopResults(){
-    let resultContainer = document.createElement('div')
+function renderYtTopResults(ytInfo){
+    let resultsContainer = document.createElement('div')
+
+    ytInfo.forEach(video => {
+        let resultContainer = document.createElement('div')
+        let resultTitle = document.createElement('h4')
+        let vidImg = document.createElement('img')
+
+        resultContainer.dataset.url = `${video.url}`
+        resultContainer.classList.add('result-container')
+        
+        resultTitle.innerText = video.thumbnail
+        resultTitle.classList.add('result-header')
+
+        vidImg.src = video.snippet.url
+        console.log(video.snippet.width)
+        vidImg.style.width = `${video.snippet.width}px`
+        vidImg.style.width = `${video.snippet.height}px`
+
+        resultContainer.append(vidImg, resultTitle)
+
+        resultsContainer.append(resultContainer)
+    });
+    document.querySelector('.main-results').append(resultsContainer)
 }

@@ -13,3 +13,29 @@
     display: flex;
     gap: 0.5em;
 }
+
+.content{
+    display: flex;
+    gap: 3em;
+
+}
+
+.main-results{
+    display: flex;
+    gap: 2em;
+}
+
+.result-container{
+    background-color: var(--txt-color);
+    display: flex;
+    gap: 1em;
+    margin-bottom: 2em;
+    border-radius: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.result-container:hover{
+    cursor: pointer;
+    scale: 1.01;
+}
