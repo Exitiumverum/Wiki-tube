@@ -1,0 +1,8 @@
+.input-bar{
+    font-size: 1em;
+    border: none;
+    border-radius: 1em;
+    background-color: var(--txt-color);
+    color: var(--dark-txt-color);
+    padding: 0.6em;
+}

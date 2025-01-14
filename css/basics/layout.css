@@ -1,0 +1,15 @@
+.main-layout{
+    background-color: var(--bg-color);
+}
+
+.main-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar{
+    display: flex;
+    gap: 0.5em;
+}
